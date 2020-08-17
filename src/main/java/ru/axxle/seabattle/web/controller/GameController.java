@@ -24,7 +24,7 @@ public class GameController {
 		return new ResponseEntity<WebGame>(newGame, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = BY_ID + "/attach", method = RequestMethod.GET)
+	@RequestMapping(value = BY_ID + "/attach", method = RequestMethod.POST)
 	public ResponseEntity<WebGame> attachToGame(@PathVariable String id) {
 		WebGame game = new WebGame();
 		game.setName("attachToGame(" + id + ")");
