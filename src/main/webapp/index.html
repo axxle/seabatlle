@@ -1,7 +1,6 @@
 <html>
 	<head>
 		<title>Игра Морской бой</title>
-		<link rel="stylesheet" href="style.css?1">
 		<meta charset="utf-8">
 	</head>
 	<body>
@@ -18,7 +17,7 @@
 			request.addEventListener("readystatechange", () => {
 				{
 					if (request.readyState === 4 && request.status === 200) {
-						console.log(request.toString());
+						console.log(request.response);
 					}
 				}
 			});
