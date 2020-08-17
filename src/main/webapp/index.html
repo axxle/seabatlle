@@ -6,12 +6,70 @@
 	<body>
 	<h1>Игра Морской бой</h1>
 	<!-- API -->
-	<button onclick="createNewGame()">createNewGame()</button>
+	<button onclick="createNewGame()">POST /game (createNewGame())</button>
+	<button onclick="attachToGame(123)">POST /game/123/attach (attachToGame(123))</button>
+	<button onclick="getGameById(123)">GET /game/123 (getGameById(123))</button>
 
 	<script>
 		function createNewGame(){
 			var request = new XMLHttpRequest();
 			request.open('POST', "/game", true);
+			request.setRequestHeader('Content-Type', 'text/html; charset=utf-8');
+			request.responseType =	"json";
+			request.addEventListener("readystatechange", () => {
+				{
+					if (request.readyState === 4 && request.status === 200) {
+						console.log(request.response);
+					}
+				}
+			});
+			request.send();
+		}
+		function attachToGame(gameId){
+			var request = new XMLHttpRequest();
+			request.open('POST', "/game/" + gameId + "/attach", true);
+			request.setRequestHeader('Content-Type', 'text/html; charset=utf-8');
+			request.responseType =	"json";
+			request.addEventListener("readystatechange", () => {
+				{
+					if (request.readyState === 4 && request.status === 200) {
+						console.log(request.response);
+					}
+				}
+			});
+			request.send();
+		}
+		function getGameById(gameId){
+			var request = new XMLHttpRequest();
+			request.open('GET', "/game/" + gameId, true);
+			request.setRequestHeader('Content-Type', 'text/html; charset=utf-8');
+			request.responseType =	"json";
+			request.addEventListener("readystatechange", () => {
+				{
+					if (request.readyState === 4 && request.status === 200) {
+						console.log(request.response);
+					}
+				}
+			});
+			request.send();
+		}
+		function move(gameId){
+			var request = new XMLHttpRequest();
+			request.open('POST', "/game/" + gameId + "/move", true);
+			request.setRequestHeader('Content-Type', 'text/html; charset=utf-8');
+			request.responseType =	"json";
+			request.addEventListener("readystatechange", () => {
+				{
+					if (request.readyState === 4 && request.status === 200) {
+						console.log(request.response);
+					}
+				}
+			});
+			request.send();
+		}
+		function leaveGame(gameId){
+			var request = new XMLHttpRequest();
+			request.open('POST', "/game/" + gameId + "/leave", true);
 			request.setRequestHeader('Content-Type', 'text/html; charset=utf-8');
 			request.responseType =	"json";
 			request.addEventListener("readystatechange", () => {
