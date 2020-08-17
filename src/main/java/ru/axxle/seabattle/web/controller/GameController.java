@@ -14,7 +14,7 @@ public class GameController {
 	public static final String REQUEST_PATH = "/game";
 
 	//CREATE_NEW_GAME	POST /game
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Object> createNewGame() {
 		return new ResponseEntity<Object>("createNewGame()", HttpStatus.OK);
 	}
