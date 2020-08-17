@@ -6,5 +6,24 @@
 	</head>
 	<body>
 	<h1>Игра Морской бой</h1>
+	<!-- API -->
+	<button onclick="createNewGame()">createNewGame()</button>
+
+	<script>
+		function createNewGame(){
+			var request = new XMLHttpRequest();
+			request.open('POST', "/game", true);
+			request.setRequestHeader('Content-Type', 'text/html; charset=utf-8');
+			request.responseType =	"json";
+			request.addEventListener("readystatechange", () => {
+				{
+					if (request.readyState === 4 && request.status === 200) {
+						console.log(request.toString());
+					}
+				}
+			});
+			request.send();
+		}
+	</script>
 	</body>
 </html>
