@@ -5,6 +5,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.*;
+import ru.axxle.seabattle.web.WebGame;
 
 
 @RestController
@@ -13,10 +14,11 @@ public class GameController {
 	public static final String BY_ID = "/{id:.+}";
 	public static final String REQUEST_PATH = "/game";
 
-	//CREATE_NEW_GAME	POST /game
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Object> createNewGame() {
-		return new ResponseEntity<Object>("createNewGame()", HttpStatus.OK);
+	public ResponseEntity<WebGame> createNewGame() {
+		WebGame newGame = new WebGame();
+		newGame.setName("createNewGame()");
+		return new ResponseEntity<WebGame>(newGame, HttpStatus.OK);
 	}
 
 	//ATTACH_TO_GAME	POST /game/{id:.+}/attach
