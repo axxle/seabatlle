@@ -9,6 +9,8 @@
 	<button onclick="createNewGame()">POST /game (createNewGame())</button>
 	<button onclick="attachToGame(123)">POST /game/123/attach (attachToGame(123))</button>
 	<button onclick="getGameById(123)">GET /game/123 (getGameById(123))</button>
+	<button onclick="makeMove(123, 'A1')">POST /game/123/move (makeMove(123, 'A1'))</button>
+	<button onclick="leaveGame(123)">POST /game/123/leave (leaveGame(123))</button>
 
 	<script>
 		function createNewGame(){
@@ -53,7 +55,7 @@
 			});
 			request.send();
 		}
-		function move(gameId){
+		function makeMove(gameId, move){
 			var request = new XMLHttpRequest();
 			request.open('POST', "/game/" + gameId + "/move", true);
 			request.setRequestHeader('Content-Type', 'text/html; charset=utf-8');
