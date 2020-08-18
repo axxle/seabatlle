@@ -31,13 +31,6 @@ public class GameController {
 		return new ResponseEntity<WebGame>(game, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = BY_ID + "/move", method = RequestMethod.GET)
-	public ResponseEntity<WebGame> move(@PathVariable String id) {
-		WebGame game = new WebGame();
-		game.setName("move(" + id + ")");
-		return new ResponseEntity<WebGame>(game, HttpStatus.OK);
-	}
-
 	@RequestMapping(value = BY_ID, method = RequestMethod.GET)
 	public ResponseEntity<WebGame> getById(@PathVariable String id) {
 		WebGame game = new WebGame();
@@ -45,7 +38,14 @@ public class GameController {
 		return new ResponseEntity<WebGame>(game, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = BY_ID + "/leave", method = RequestMethod.GET)
+	@RequestMapping(value = BY_ID + "/move", method = RequestMethod.POST)
+	public ResponseEntity<WebGame> move(@PathVariable String id) {
+		WebGame game = new WebGame();
+		game.setName("move(" + id + ")");
+		return new ResponseEntity<WebGame>(game, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = BY_ID + "/leave", method = RequestMethod.POST)
 	public ResponseEntity<WebGame> leaveGame(@PathVariable String id) {
 		WebGame game = new WebGame();
 		game.setName("leaveGame(" + id + ")");
