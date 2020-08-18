@@ -67,7 +67,7 @@
 					}
 				}
 			});
-			request.send({move: move});
+			request.send(JSON.stringify({move: move}));
 		}
 		function leaveGame(gameId){
 			var request = new XMLHttpRequest();
