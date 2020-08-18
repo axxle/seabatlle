@@ -39,7 +39,7 @@ public class GameController {
 	}
 
 	@RequestMapping(value = BY_ID + "/move", method = RequestMethod.POST)
-	public ResponseEntity<WebGame> move(@PathVariable String id) {
+	public ResponseEntity<WebGame> makeMove(@PathVariable String id) {
 		WebGame game = new WebGame();
 		game.setName("move(" + id + ")");
 		return new ResponseEntity<WebGame>(game, HttpStatus.OK);
