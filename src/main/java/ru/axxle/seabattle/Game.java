@@ -1,6 +1,8 @@
-package ru.axxle.seabattle.web;
+package ru.axxle.seabattle;
 
-public class WebGame {
+import ru.axxle.seabattle.web.WebGameArea;
+
+public class Game {
 
 	private String id;
 
@@ -10,7 +12,7 @@ public class WebGame {
 
 	private WebGameArea area2;
 
-	public WebGame(){
+	public Game(){
 		this.area1 = new WebGameArea();
 		this.area2 = new WebGameArea();
 	}

@@ -1,6 +1,6 @@
 package ru.axxle.seabattle.web;
 
-public class GameArea {
+public class WebGameArea {
     private String A1;
     private String A2;
     private String A3;
@@ -11,7 +11,7 @@ public class GameArea {
     private String C2;
     private String C3;
 
-    public GameArea () {
+    public WebGameArea() {
         this.A1 = "not fired";
         this.A2 = "not fired";
         this.A3 = "not fired";
