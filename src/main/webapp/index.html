@@ -12,6 +12,8 @@
 	<button onclick="makeMove(123, 'A1')">POST /game/123/move (makeMove(123, 'A1'))</button>
 	<button onclick="leaveGame(123)">POST /game/123/leave (leaveGame(123))</button>
 
+	<button onclick="getGameById(777)">GET /game/777 (getGameById(777)) запрос не существующей игры</button>
+
 	<script>
 		function createNewGame(){
 			var request = new XMLHttpRequest();
