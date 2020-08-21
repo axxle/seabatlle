@@ -24,7 +24,7 @@ public class GameController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<WebGame> createNewGame() {
-		WebGame newGame = new WebGame();
+		WebGame newGame = webGameService.createNewGame();
 		newGame.setName("createNewGame()");
 		return new ResponseEntity<WebGame>(newGame, HttpStatus.OK);
 	}
