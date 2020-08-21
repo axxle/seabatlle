@@ -2,15 +2,16 @@ package ru.axxle.seabattle.dao;
 
 import ru.axxle.seabattle.Game;
 
+import java.util.List;
+
 public interface GameDao {
 
-    Game createNewGame();
+    Game create(Game game);
 
-    Game attachToGame(String gameId);
+    List<Game> getAll();
 
     Game getById(String gameId);
 
-    Game makeMove(String gameId, String move);
+    Game save(Game game);
 
-    Game leaveGame(String gameId);
 }

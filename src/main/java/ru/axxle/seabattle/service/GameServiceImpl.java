@@ -14,12 +14,12 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public Game createNewGame() {
-        return dao.createNewGame();
+        return dao.create(new Game());
     }
 
     @Override
     public Game attachToGame(String gameId) {
-        return dao.attachToGame(gameId);
+        return dao.getById(gameId);
     }
 
     @Override
@@ -29,11 +29,11 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public Game makeMove(String gameId, String move) {
-        return dao.makeMove(gameId, move);
+        return dao.getById(gameId);
     }
 
     @Override
     public Game leaveGame(String gameId) {
-        return dao.leaveGame(gameId);
+        return dao.getById(gameId);
     }
 }

@@ -3,25 +3,24 @@ package ru.axxle.seabattle.dao;
 import ru.axxle.seabattle.Game;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GameDaoImpl implements GameDao {
 
     private Map<String, Game> gameStorage = new HashMap();
+    private volatile int counter = 0;
 
     @Override
-    public Game createNewGame() {
-        Game game = new Game();
-        game.setId("123");
+    public Game create(Game game) {
+        game.setId(++counter + "");
         gameStorage.put(game.getId(), game);
-        return game;
+        return gameStorage.get(game.getId());
     }
 
     @Override
-    public Game attachToGame(String gameId) {
-        Game game = gameStorage.get(gameId);
-        //setSecondPlayer
-        return game;
+    public List<Game> getAll() {
+        return null;
     }
 
     @Override
@@ -30,16 +29,8 @@ public class GameDaoImpl implements GameDao {
     }
 
     @Override
-    public Game makeMove(String gameId, String move) {
-        Game game = gameStorage.get(gameId);
-        //makeMove
-        return game;
-    }
-
-    @Override
-    public Game leaveGame(String gameId) {
-        Game game = gameStorage.get(gameId);
-        //leaveGame
-        return game;
+    public Game save(Game game) {
+        gameStorage.put(game.getId(), game);
+        return gameStorage.get(game.getId());
     }
 }
