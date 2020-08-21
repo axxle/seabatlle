@@ -1,5 +1,6 @@
 package ru.axxle.seabattle.web.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import ru.axxle.seabattle.web.WebGame;
+import ru.axxle.seabattle.web.service.WebGameService;
 
 
 @RestController
@@ -16,6 +18,9 @@ import ru.axxle.seabattle.web.WebGame;
 public class GameController {
 	public static final String BY_ID = "/{id:.+}";
 	public static final String REQUEST_PATH = "/game";
+
+	@Autowired
+	private WebGameService webGameService;
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<WebGame> createNewGame() {

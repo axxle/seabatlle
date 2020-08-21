@@ -6,4 +6,9 @@
 
     <context:property-placeholder location="WEB-INF/META-INF/app.properties" />
 
+    <!-- WebService -->
+    <bean id="webGameService" class="ru.axxle.seabattle.web.service.WebGameServiceImpl" />
+    <!-- Service -->
+    <bean id="gameService" class="ru.axxle.seabattle.service.GameServiceImpl" />
+
 </beans>

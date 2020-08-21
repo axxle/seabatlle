@@ -2,7 +2,7 @@ package ru.axxle.seabattle.web.service;
 
 import ru.axxle.seabattle.web.WebGame;
 
-interface WebGameService {
+public interface WebGameService {
 
     WebGame createNewGame();
 
